@@ -35,7 +35,7 @@
 
     <main>
         <h2>OFERTAS XIAOMI</h2>
-        <section>
+        <section id="catalogo">
             <article>
                 <p class="fondor">Envio gratis</p>
                 <figure>
@@ -208,10 +208,10 @@
                 <figure>
                     <img src="Imagenes/productos/nothingphone.png" alt="">
                 </figure>
-                <p class="nombre">Samsung Galaxy tab S10</p>
-                <p class="descripcion">12.4" 12GB/512GB 5G Plata</p>
+                <p class="nombre">Nothing Phone 3a 5G</p>
+                <p class="descripcion">12GB/256GB Azul</p>
                 <nav class="Valoraciones">
-                    <p>Valoraciones</p>
+                    <p>(6 opniniones)</p>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -219,12 +219,15 @@
                     <i class="fa-solid fa-star"></i>
                 </nav>
                 <div>
-                    <span class="descuento">Descuento</span>
-                    <span class="precio">Precio</span>
+                    <span class="descuento">-31%</span>
+                    <div class="precdiv">
+                        <span class="precio-anterior">PVR 449,00€</span>
+                        <span class="precio">359,99€</span>
+                    </div>
                 </div>
-                <nav class="stock">
-                    <p>Stock</p>
-                    <i class="fa-solid fa-rocket"></i>
+                <nav class="stock3">
+                    <p>En camino! Recibelo Jueves,</p>
+                    <p>23 Oct.</p>
                 </nav>
             </article>
 
@@ -233,10 +236,9 @@
                 <figure>
                     <img src="Imagenes/productos/xiaomisound.png" alt="">
                 </figure>
-                <p class="nombre">Samsung Galaxy tab S10</p>
-                <p class="descripcion">12.4" 12GB/512GB 5G Plata</p>
+                <p class="nombre">Xiaomi Sound Party</p>
                 <nav class="Valoraciones">
-                    <p>Valoraciones</p>
+                    <p>16 (0 opniniones)</p>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -244,12 +246,15 @@
                     <i class="fa-solid fa-star"></i>
                 </nav>
                 <div>
-                    <span class="descuento">Descuento</span>
-                    <span class="precio">Precio</span>
+                    <span class="descuento">-31%</span>
+                    <div class="precdiv">
+                        <span class="precio-anterior">PVR 429,99€</span>
+                        <span class="precio">89,99€</span>
+                    </div>
                 </div>
-                <nav class="stock">
-                    <p>Stock</p>
-                    <i class="fa-solid fa-rocket"></i>
+                <nav class="stock3">
+                    <p>En camino! Recibelo Jueves,</p>
+                    <p>16 Oct.</p>
                 </nav>
             </article>
 
@@ -258,10 +263,10 @@
                 <figure>
                     <img src="Imagenes/productos/honor400.png" alt="">
                 </figure>
-                <p class="nombre">Samsung Galaxy tab S10</p>
-                <p class="descripcion">12.4" 12GB/512GB 5G Plata</p>
+                <p class="nombre">Honor 400 5G 8GB/256GB</p>
+                <p class="descripcion">Dorado</p>
                 <nav class="Valoraciones">
-                    <p>Valoraciones</p>
+                    <p>(0 opniniones)</p>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -269,12 +274,15 @@
                     <i class="fa-solid fa-star"></i>
                 </nav>
                 <div>
-                    <span class="descuento">Descuento</span>
-                    <span class="precio">Precio</span>
+                    <span class="descuento">-24%</span>
+                    <div class="precdiv">
+                        <span class="precio-anterior">PVR 649,00€</span>
+                        <span class="precio">419,00€</span>
+                    </div>
                 </div>
-                <nav class="stock">
-                    <p>Stock</p>
-                    <i class="fa-solid fa-rocket"></i>
+                <nav class="stock2">
+                    <p>Entrega prevista Lunes, 12</p>
+                    <p>Oct.</p>
                 </nav>
             </article>
 
@@ -283,10 +291,10 @@
                 <figure>
                     <img src="Imagenes/productos/maquinaexpreso.png" alt="">
                 </figure>
-                <p class="nombre">Samsung Galaxy tab S10</p>
-                <p class="descripcion">12.4" 12GB/512GB 5G Plata</p>
+                <p class="nombre">Xiaomi Semi-automatic</p>
+                <p class="descripcion">Espresso Machine</p>
                 <nav class="Valoraciones">
-                    <p>Valoraciones</p>
+                    <p>97 (19 opiniones)</p>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -294,12 +302,15 @@
                     <i class="fa-solid fa-star"></i>
                 </nav>
                 <div>
-                    <span class="descuento">Descuento</span>
-                    <span class="precio">Precio</span>
+                    <span class="descuento">-27%</span>
+                    <div class="precdiv">
+                        <span class="precio-anterior">PVR 429,99€</span>
+                        <span class="precio">94,98€</span>
+                    </div>
                 </div>
-                <nav class="stock">
-                    <p>Stock</p>
-                    <i class="fa-solid fa-rocket"></i>
+               <nav class="stock3">
+                    <p>En camino! Recibelo Jueves,</p>
+                    <p>16 Oct.</p>
                 </nav>
             </article>
         </section>
@@ -407,3 +418,14 @@
 </body>
 
 </html>
+
+<script>
+    //fetch es una funcion JS para leer un archivo JSON o hacer peticiones HTTP a una API
+    fetch('data/productos.json')
+        .then(response => response().json())
+        .then(productos => {
+            const contenedor = document.getElementById('catalogo');
+            contenedor.innerHTML =
+                `<h1>CATALOGO DE PRODUCTOS </h1>`
+        })
+</script>

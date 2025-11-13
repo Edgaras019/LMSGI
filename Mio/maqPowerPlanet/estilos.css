@@ -221,11 +221,22 @@ main section article nav.stock2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0px;
     margin-top: 10px;
     font-size: medium;
     font-weight: bold;
     padding-bottom: 10px;
+}
+
+main section article nav.stock3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: 10px;
+    color: rgb(103, 170, 2);
 }
 
 main section article div .precdiv2 {
