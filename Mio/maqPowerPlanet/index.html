@@ -198,7 +198,7 @@
                     </div>
                 </div>
                 <nav class="stock2">
-                    <p>Entrega prevista Lunes, 12</p>
+                    <p>Entrega prevista Lunes, 27</p>
                     <p>Oct.</p>
                 </nav>
             </article>
@@ -281,8 +281,8 @@
                     </div>
                 </div>
                 <nav class="stock2">
-                    <p>Entrega prevista Lunes, 12</p>
-                    <p>Oct.</p>
+                    <p>Entrega prevista entre, 13 Oct.</p>
+                    <p>y 14 Oct.</p>
                 </nav>
             </article>
 
@@ -307,6 +307,7 @@
                         <span class="precio-anterior">PVR 429,99€</span>
                         <span class="precio">94,98€</span>
                     </div>
+                    
                 </div>
                <nav class="stock3">
                     <p>En camino! Recibelo Jueves,</p>
@@ -420,12 +421,56 @@
 </html>
 
 <script>
-    //fetch es una funcion JS para leer un archivo JSON o hacer peticiones HTTP a una API
-    fetch('data/productos.json')
-        .then(response => response().json())
+    //Manipular el HMTL(usuario) <--> DOM (navegador) 
+    //fectch es un funcion JS para leer un archivo JSON o
+    //hacer una peticion http a una API
+    fetch('data/productos.json') //idem peticion a la api (BD)
+        .then(response => response.json())
         .then(productos => {
+            //codigo js
             const contenedor = document.getElementById('catalogo');
-            contenedor.innerHTML =
-                `<h1>CATALOGO DE PRODUCTOS </h1>`
+            /* 
+                productos tiene todo el array de objetos json
+            */
+            // iterar RECORRER todos los productos del array
+            // se ejecutara tantas veces como productos (obejtos) haya en el array
+            // JS --> JS Moderno (EmacsScript 6)
+            //el array productos se recorre con un buble forEach
+            productos.forEach (producto => {
+                //crear un objeto (nodo en html) <article>
+                //el objeto document (JS) y sirve para que JS acceda L/W al DOM del HTML
+                const tarjeta = document.createElement('article'); //crea un nodo html --> <article> </article>
+                //contenedor.innerHTML = `Catalogo de Productos`;
+                //con innerHTML escribo el contenido del nodo <article> creado anteriormente
+                tarjeta.innerHTML = 
+                `
+                    <p class="fondor">Envio gratis</p>
+                    <figure>
+                        <img src="${producto.imagen}" alt="${producto.nombre}" />
+                    </figure>
+                    <p class="nombre">${producto.nombre}</p>
+                    <p class="descripcion">${producto.caracteristicas.cpu}</p>
+                    <nav class="Valoraciones">
+                        <p>${producto.valoracion} (${producto.opiniones} opiniones)</p>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </nav>
+                    <div>
+                        <span class="descuento">-${producto.descuento}%</span>
+                        <div class="precdiv">
+                            <span class="precio-anterior">PVR ${producto.precioOriginal}€</span>
+                            <span class="precio">${producto.precio}€</span>
+                        </div>
+                    </div>
+                    <nav class="stock">
+                        <p>Entrega prevista entre, 13 Oct.</p>
+                        <i class="fa-solid fa-rocket"></i>
+                    </nav>
+                `;
+                contenedor.appendChild(tarjeta)
+            })
         })
 </script>
