@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerPlanet</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -307,9 +307,9 @@
                         <span class="precio-anterior">PVR 429,99€</span>
                         <span class="precio">94,98€</span>
                     </div>
-                    
+
                 </div>
-               <nav class="stock3">
+                <nav class="stock3">
                     <p>En camino! Recibelo Jueves,</p>
                     <p>16 Oct.</p>
                 </nav>
@@ -436,14 +436,14 @@
             // se ejecutara tantas veces como productos (obejtos) haya en el array
             // JS --> JS Moderno (EmacsScript 6)
             //el array productos se recorre con un buble forEach
-            productos.forEach (producto => {
+            productos.forEach(producto => {
                 //crear un objeto (nodo en html) <article>
                 //el objeto document (JS) y sirve para que JS acceda L/W al DOM del HTML
                 const tarjeta = document.createElement('article'); //crea un nodo html --> <article> </article>
                 //contenedor.innerHTML = `Catalogo de Productos`;
                 //con innerHTML escribo el contenido del nodo <article> creado anteriormente
-                tarjeta.innerHTML = 
-                `
+                tarjeta.innerHTML =
+                    `
                     <p class="fondor">Envio gratis</p>
                     <figure>
                         <img src="${producto.imagen}" alt="${producto.nombre}" />
