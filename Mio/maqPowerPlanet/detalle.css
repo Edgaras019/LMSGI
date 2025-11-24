@@ -128,7 +128,6 @@ main .contenido2 {
     align-items: self-start;
     flex-direction: column;
     gap: 20px;
-    border: 1px solid black;
 }
 
 main .nombre h2 {
@@ -150,6 +149,111 @@ main .opiniones {
 
 main .valoracion-texto {
     color: grey;
+}
+
+main .precio {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    gap: 30px;
+    padding: 15px;
+}
+
+main .precio .descuento {
+    color: white;
+    font-size: large;
+    background-color: palevioletred;
+    border-radius: 18px;
+    padding: 5px;
+    text-align: center;
+}
+
+main .precio-original {
+    display: flex;
+    flex-direction: column;
+    color: rgb(91, 91, 91);
+}
+
+main .precio-original p span {
+    text-decoration: line-through;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+}
+
+main .disponibilidad {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(194, 194, 194);
+    border-radius: 20px;
+}
+
+main .disponibilidad i {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+    padding: 40px;
+    background-color: rgb(255, 73, 255);
+    border-radius: 50%;
+}
+
+main .disponibilidad .elementos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+main .recogida {
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    color: greenyellow;
+}
+
+main .ofertas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    font-weight: bold;
+}
+
+main .ofertas button {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+main .botones-compra {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 10px;
+}
+
+main .botones-compra button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 main .img1 {
