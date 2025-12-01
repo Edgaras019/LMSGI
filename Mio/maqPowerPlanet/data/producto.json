@@ -1,0 +1,23 @@
+[
+    {
+     "id": 1,
+    "nombre": "Chuwi GameBook AMD Ryzen",
+    "precio": 389.00,
+    "precioOriginal": 499.00,
+    "descuento": 22,
+    "imagen": "https://www.powerplanetonline.com/cdnassets/products/95641/chuwi-gamebook-amd-ryzen-99955hx-32gb-ddr5-1tb-1_l.jpg",
+    "valoracion": 5.0,
+    "opiniones": 3,
+    "garantia": 2,
+    "envio": 4.95,
+    "disponibilidad": "¡En stock! Recíbelo mañana Martes, 25 Nov.",
+    "recogida": "Recogida disponible en nuestra tienda de Murcia",
+    "iva": "Los precios incluyen IVA",
+    "caracteristicas": {
+      "cpu": "199955HX 32GB 1TB SSD RTX 5070",
+      "ram": "Ti 12GB Windows11 Pro -",
+      "disco": "Portatil 16"
+    }
+    
+    }
+]

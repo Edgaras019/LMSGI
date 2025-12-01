@@ -206,6 +206,119 @@
             </article>
         </section>
     </footer>
+    <script>
+        //Manipular el HMTL(usuario) <--> DOM (navegador) 
+        //fectch es un funcion JS para leer un archivo JSON o
+        //hacer una peticion http a una API
+        fetch('data/producto.json') //idem peticion a la api (BD)
+            .then(response => response.json())
+            .then(producto => {
+                //codigo js
+                // Reemplazar el contenido del <main> con el contenido generado por el script
+                const mainContenido = document.querySelector('main');
+                let contenedor;
+                if (mainContenido) {
+                    // vaciar el main (reemplazar todo)
+                    mainContenido.innerHTML = '';
+                    contenedor = mainContenido;
+                } else {
+                    contenedor = document.getElementById('productos-relacionados') || document.body;
+                }
+                /* 
+                    productos tiene todo el array de objetos json
+                */
+                // iterar RECORRER todos los productos del array
+                // se ejecutara tantas veces como productos (obejtos) haya en el array
+                // JS --> JS Moderno (EmacsScript 6)
+                //el array productos se recorre con un buble forEach
+                const items = Array.isArray(producto) ? producto : [producto];
+                items.forEach(p => {
+                    //crear un objeto (nodo en html) <article>
+                    //el objeto document (JS) y sirve para que JS acceda L/W al DOM del HTML
+                    const tarjeta = document.createElement('div'); //crea un nodo html --> <article> </article>
+                    //contenedor.innerHTML = `Catalogo de Productos`;
+                    //con innerHTML escribo el contenido del nodo <article> creado anteriormente
+                    tarjeta.innerHTML =
+                        `
+<main>
+        <section class="galeria">
+            <aside class="galeria-imagenes">
+                <figure class="miniaturas">
+                    <img src="Imagenes/productos/chuwi.png" alt="Miniatura 1" class="miniatura">
+                    <img src="Imagenes/productos/chuwi2.png" alt="Miniatura 2" class="miniatura">
+                    <img src="Imagenes/productos/chuwi3.png" alt="Miniatura 3" class="miniatura">
+                    <img src="Imagenes/productos/chuwi4.png" alt="Miniatura 4" class="miniatura">
+                    <img src="Imagenes/productos/chuwi5.png" alt="Miniatura 5" class="miniatura">
+                    <img src="Imagenes/productos/chuwi6.png" alt="Miniatura 6" class="miniatura">
+                    <img src="Imagenes/productos/chuwi7.png" alt="Miniatura 7" class="miniatura">
+                    <img src="Imagenes/productos/chuwi8.png" alt="Miniatura 8" class="miniatura">
+                </figure>
+            </aside>
+        </section>
+        <section class="contenido1">
+            <figure class="img2">
+                <img src="Imagenes/productos/freshfriday.png" alt="">
+            </figure>
+            <figure class="img1">
+                <img src="${p.imagen}" alt="Imagen principal del producto">
+            </figure>
+            <div>
+                <h2>Envio gratis</h2>
+            </div>
+        </section>
+
+        <section class="contenido2">
+            <div class="nombre">
+                <h2>"${p.nombre}</h2>
+                <h2>${p.caracteristicas.cpu}</h2>
+                <h2>${p.caracteristicas.ram}</h2>
+                <h2>${p.caracteristicas.disco}"</h2>
+            </div>
+            <nav class="opiniones">
+                <p class="valoracion-texto">${p.valoracion} (${p.opiniones} opiniones) Opina!</p>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </nav>
+            <div id="productos-relacionados">
+                <div class="precio">
+                    <h3 class="descuento">${p.descuento}%</h3>
+                    <p>${p.precio}€</p>
+                </div>
+                <div class="precio-original">
+                    <p>Precio recomendado:<span>${p.precioOriginal}€</span></p>
+                    <p>${p.iva}</p>
+                </div>
+                <div class="disponibilidad">
+                    <i class="fa-solid fa-truck"></i>
+                    <div class="elementos">
+                        <p>Disponibilidad: ${p.disponibilidad}</p>
+                        <p>Envío : Desde ${p.envio}€</p>
+                        <p>Garantia: ${p.garantia} años</p>
+                    </div>
+                </div>
+                <div class="recogida">
+                    <p>${p.recogida}</p>
+                </div>
+                <div class="ofertas">
+                    <p>Ya disponible nuestro FRESH FRIDAY 💥 ¡Aprovecha las mejores ofertas de BLACK FRIDAY!</p>
+                    <button>VER OFERTAS!</button>
+                </div>
+                <div class="botones-compra">
+                    <button class="btn-comprar">1</button>
+                    <button class="btn-carrito">COMPRAR AHORA!</button>
+                </div>
+            </div>
+        </section>
+</main>
+                `;
+                    contenedor.appendChild(tarjeta)
+                })
+            })
+    </script>
+
 </body>
 
 </html>

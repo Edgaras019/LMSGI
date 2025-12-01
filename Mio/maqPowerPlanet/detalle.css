@@ -96,6 +96,7 @@ main  {
     background-color: white;
 }
 
+
 main .contenido1 {
     flex-basis: 50%;
     display: flex;
