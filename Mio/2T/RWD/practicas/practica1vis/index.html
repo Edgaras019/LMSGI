@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design - Mobile First</title>
+    <link rel="stylesheet" href="css/movil.css">
+    <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width: 1024px)">
+</head>
+
+<body>
+    <header>
+        <figure>
+            <img src="imagenes/logo.png" alt="">
+        </figure>
+        <h1>Mi Sitio Web</h1>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Acerca de</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <button>Registrarse</button>
+    </header>
+
+    <main>
+        <section class="lateral">
+            <h2>Menú Lateral</h2>
+            <nav>
+                <a href="#">Categoria 1</a>
+                <a href="#">Categoria 2</a>
+                <a href="#">Categoria 3</a>
+                <a href="#">Categoria 4</a>
+                <a href="#">Configuración</a>
+            </nav>
+        </section>
+        <section class="padre">
+            <section class="principal">
+                <h1>Contenido Principal</h1>
+                <h3>Responsive Web Design con Mobile First</h3>
+                <p>Este diseño adapta su estructura según el tamaño de la pantalla del dispositivo:</p>
+                <ul>
+                    <li><strong>Móviles:</strong> Pantallas pequeñas (móviles): Diseño en una sola columna.</li>
+                    <li><strong>Tabletas:</strong> Pantallas medianas (tabletas): Diseño en dos columnas.</li>
+                    <li><strong>Escritorios:</strong> Pantallas grandes (escritorios): Diseño en tres columnas.</li>
+                </ul>
+                <p>Los estilos se cargan en cascada: primero los estilos para móviles, luego para tabletas y finalmente
+                    para escritorios.</p>
+                <p>Esta estructura utiliza tres archivos CSS separados para cada tamaño de pantalla:</p>
+                <ul>
+                    <li><strong>movil.css</strong>: Estilos para dispositivos móviles.</li>
+                    <li><strong>tablet.css</strong>: Estilos para tabletas (aplicados a partir de 768px).</li>
+                    <li><strong>desktop.css</strong>: Estilos para escritorios (aplicados a partir de 1024px).</li>
+                </ul>
+            </section>
+
+            <section class="adicional">
+                <h2>Información Adicional</h2>
+                <p>Este es el área de contenido complementario que se puede agregar:</p>
+                <ul>
+                    <li>Noticias recientes</li>
+                    <li>Enlaces útiles</li>
+                    <li>Publicidad</li>
+                    <li>Widgets</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <h3>Siguenos en redes</h3>
+        <nav>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </nav>
+        <div>
+            <h3>Contacto</h3>
+            <p>info@gmail.com</p>
+            <p>+34 123 456 789</p>
+            <p>Madrid, España</p>
+        </div>
+    </footer>
+</body>
+
+</html>

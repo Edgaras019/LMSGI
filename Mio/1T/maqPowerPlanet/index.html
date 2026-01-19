@@ -467,7 +467,11 @@
                         <i class="fa-solid fa-rocket"></i>
                     </nav>
                 `;
-                contenedor.appendChild(tarjeta)
+                contenedor.appendChild(tarjeta);
+                tarjeta.addEventListener('click', () => {
+                    //Creamos el parametro en la URL
+                    window.location.href = `detalle.html?id=${producto.nombre}`;
+                });
             })
         })
 </script>

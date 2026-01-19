@@ -207,20 +207,26 @@
         </section>
     </footer>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const idProd = parseInt(urlParams.get('id'));
+        //Comprobar el id recibido por la URL
+        console.log("--->", idProd);
         //Manipular el HMTL(usuario) <--> DOM (navegador) 
         //fectch es un funcion JS para leer un archivo JSON o
         //hacer una peticion http a una API
         fetch('data/producto.json') //idem peticion a la api (BD)
             .then(response => response.json())
             .then(producto => {
+
+                const prod = producto.find(p => p.id === idProd);
                 //codigo js
                 // Reemplazar el contenido del <main> con el contenido generado por el script
-                const mainContenido = document.querySelector('main');
+                const mainEl = document.querySelector('main');
                 let contenedor;
-                if (mainContenido) {
+                if (mainEl) {
                     // vaciar el main (reemplazar todo)
-                    mainContenido.innerHTML = '';
-                    contenedor = mainContenido;
+                    mainEl.innerHTML = '';
+                    contenedor = mainEl;
                 } else {
                     contenedor = document.getElementById('productos-relacionados') || document.body;
                 }
@@ -240,7 +246,7 @@
                     //con innerHTML escribo el contenido del nodo <article> creado anteriormente
                     tarjeta.innerHTML =
                         `
-<main>
+                    <main>
         <section class="galeria">
             <aside class="galeria-imagenes">
                 <figure class="miniaturas">
@@ -289,18 +295,18 @@
                 </div>
                 <div class="precio-original">
                     <p>Precio recomendado:<span>${p.precioOriginal}€</span></p>
-                    <p>${p.iva}</p>
+                    <p>Los precios incluyen IVA</p>
                 </div>
                 <div class="disponibilidad">
                     <i class="fa-solid fa-truck"></i>
                     <div class="elementos">
-                        <p>Disponibilidad: ${p.disponibilidad}</p>
-                        <p>Envío : Desde ${p.envio}€</p>
-                        <p>Garantia: ${p.garantia} años</p>
+                        <p>Disponibilidad: ¡En stock! Recíbelo mañana Martes, 25 Nov.</p>
+                        <p>Envío : Desde 4,95€</p>
+                        <p>Garantia: 3 años</p>
                     </div>
                 </div>
                 <div class="recogida">
-                    <p>${p.recogida}</p>
+                    <p>Recogida disponible en nuestra tienda de Murcia</p>
                 </div>
                 <div class="ofertas">
                     <p>Ya disponible nuestro FRESH FRIDAY 💥 ¡Aprovecha las mejores ofertas de BLACK FRIDAY!</p>
@@ -312,7 +318,7 @@
                 </div>
             </div>
         </section>
-</main>
+    </main>
                 `;
                     contenedor.appendChild(tarjeta)
                 })

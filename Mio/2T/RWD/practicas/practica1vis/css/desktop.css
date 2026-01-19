@@ -1,0 +1,47 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+header figure img{
+    width: 30%;
+    display: block;
+}
+
+main {
+    margin: 10px;
+    font-size: small;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
+    flex: 1;
+}
+
+main section.padre {
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    flex-direction: row;
+}
+
+main section.principal {
+    width: 50%;
+}
+
+main section.adicional {
+    width: 40%;
+}
+
+main section.lateral {
+    width: 100%;
+}
+
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
